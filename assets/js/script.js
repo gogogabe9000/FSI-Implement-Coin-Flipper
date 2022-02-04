@@ -1,18 +1,20 @@
 // TODO: Declare any global variables we need
+let numberOfHeadRolls = 0
+let numberOfTailRolls = 0
+const flipBtn = document.querySelector('#flip')
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    // This is just a sanity check to make sure your JavaScript script is getting loaded
-    // You can remove it once you see it in your browser console in the developer tools
-    console.log('Hi')
 
     // TODO: Add event listener and handler for flip and clear buttons
 
+
+    
     // Flip Button Click Handler
         // TODO: Determine flip outcome
         // TODO: Update image and status message in the DOM
 
-        // Update the scorboard
+        // Update the scoreboard
         // TODO: Calculate the total number of rolls/flips
         // Make variables to track the percentages of heads and tails
         // TODO: Use the calculated total to calculate the percentages
