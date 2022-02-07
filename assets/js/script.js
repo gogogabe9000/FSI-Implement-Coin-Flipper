@@ -61,14 +61,15 @@ function updateScoreBoard() {
 
 
     // Clear Button Click Handler
+    // TODO: Reset global variables to 0
+    // TODO: Update the scoreboard (same logic as in flip button click handler)
     clearBtn.addEventListener('click', function(){
         numberOfHeadFlips = 0
         numberOfTailFlips = 0
         percentHeads = 0
         percentTails = 0
         updateScoreBoard()
+        message.textContent = 'Let\'s get rolling!'
     })
-        // TODO: Reset global variables to 0
-        // TODO: Update the scoreboard (same logic as in flip button click handler)
 
 })
