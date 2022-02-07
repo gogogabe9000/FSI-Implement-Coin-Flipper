@@ -1,6 +1,7 @@
 // TODO: Declare any global variables we need
 let numberOfHeadFlips = 0
 let numberOfTailFlips = 0
+// Make variables to track the percentages of heads and tails
 let percentHeads = 0
 let percentTails = 0
 const flipBtn = document.querySelector('#flip')
@@ -10,6 +11,7 @@ const heads = document.querySelector('#heads')
 const tails = document.querySelector('#tails')
 const headsPercent = document.querySelector('#heads-percent')
 const tailsPercent = document.querySelector('#tails-percent')
+const clearBtn = document.querySelector('#clear')
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -33,32 +35,39 @@ document.addEventListener('DOMContentLoaded', function () {
             numberOfTailFlips++
         }
 
+        // TODO: Calculate the total number of rolls/flips
         let total = numberOfHeadFlips + numberOfTailFlips
 
 
+        // TODO: Use the calculated total to calculate the percentages
+        // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
         if (total > 0) {
             percentHeads = Math.round((numberOfHeadFlips/total) * 100)
             percentTails = Math.round((numberOfTailFlips/total) * 100)
         }
 
         // Update the scoreboard
-        updateScoreBoard()
-        // TODO: Calculate the total number of rolls/flips
-        // Make variables to track the percentages of heads and tails
-        // TODO: Use the calculated total to calculate the percentages
-        // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
         // TODO: Update the display of each table cell
+        updateScoreBoard()
     })
     
 function updateScoreBoard() {
     heads.textContent = numberOfHeadFlips
     tails.textContent = numberOfTailFlips
-    headsPercent.textContent = percentHeads
-    tailsPercent.textContent = percentTails
+    headsPercent.textContent = `${percentHeads} %`
+    tailsPercent.textContent = `${percentTails} %`
 }
 
 
+
     // Clear Button Click Handler
+    clearBtn.addEventListener('click', function(){
+        numberOfHeadFlips = 0
+        numberOfTailFlips = 0
+        percentHeads = 0
+        percentTails = 0
+        updateScoreBoard()
+    })
         // TODO: Reset global variables to 0
         // TODO: Update the scoreboard (same logic as in flip button click handler)
 
