@@ -1,11 +1,15 @@
 // TODO: Declare any global variables we need
 let numberOfHeadFlips = 0
 let numberOfTailFlips = 0
+let percentHeads = 0
+let percentTails = 0
 const flipBtn = document.querySelector('#flip')
 const pennyImg = document.querySelector('#coinImage')
 const message = document.querySelector('#message')
 const heads = document.querySelector('#heads')
 const tails = document.querySelector('#tails')
+const headsPercent = document.querySelector('#heads-percent')
+const tailsPercent = document.querySelector('#tails-percent')
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -28,6 +32,15 @@ document.addEventListener('DOMContentLoaded', function () {
             message.textContent = 'You flipped tails!'
             numberOfTailFlips++
         }
+
+        let total = numberOfHeadFlips + numberOfTailFlips
+
+
+        if (total > 0) {
+            percentHeads = Math.round((numberOfHeadFlips/total) * 100)
+            percentTails = Math.round((numberOfTailFlips/total) * 100)
+        }
+
         // Update the scoreboard
         updateScoreBoard()
         // TODO: Calculate the total number of rolls/flips
@@ -40,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateScoreBoard() {
     heads.textContent = numberOfHeadFlips
     tails.textContent = numberOfTailFlips
+    headsPercent.textContent = percentHeads
+    tailsPercent.textContent = percentTails
 }
 
 
