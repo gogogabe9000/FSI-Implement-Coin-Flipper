@@ -1,9 +1,11 @@
 // TODO: Declare any global variables we need
-let numberOfHeadRolls = 0
-let numberOfTailRolls = 0
+let numberOfHeadFlips = 0
+let numberOfTailFlips = 0
 const flipBtn = document.querySelector('#flip')
 const pennyImg = document.querySelector('#coinImage')
 const message = document.querySelector('#message')
+const heads = document.querySelector('#heads')
+const tails = document.querySelector('#tails')
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -15,24 +17,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
         // TODO: Update image and status message in the DOM
+        // TODO: Determine flip outcome
         
         if(flippedHeads){
             pennyImg.setAttribute('src', 'assets/images/penny-heads.jpg')
             message.textContent = 'You flipped heads!'
+            numberOfHeadFlips++
         } else {
             pennyImg.setAttribute('src', 'assets/images/penny-tails.jpg')
             message.textContent = 'You flipped tails!'
+            numberOfTailFlips++
         }
-    })
-    
-        // TODO: Determine flip outcome
-
         // Update the scoreboard
+        updateScoreBoard()
         // TODO: Calculate the total number of rolls/flips
         // Make variables to track the percentages of heads and tails
         // TODO: Use the calculated total to calculate the percentages
         // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
         // TODO: Update the display of each table cell
+    })
+    
+function updateScoreBoard() {
+    heads.textContent = numberOfHeadFlips
+    tails.textContent = numberOfTailFlips
+}
 
 
     // Clear Button Click Handler
