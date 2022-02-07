@@ -3,7 +3,7 @@ let numberOfHeadRolls = 0
 let numberOfTailRolls = 0
 const flipBtn = document.querySelector('#flip')
 const pennyImg = document.querySelector('#coinImage')
-
+const message = document.querySelector('#message')
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -15,10 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
         // TODO: Update image and status message in the DOM
+        
         if(flippedHeads){
             pennyImg.setAttribute('src', 'assets/images/penny-heads.jpg')
+            message.textContent = 'You flipped heads!'
         } else {
             pennyImg.setAttribute('src', 'assets/images/penny-tails.jpg')
+            message.textContent = 'You flipped tails!'
         }
     })
     
